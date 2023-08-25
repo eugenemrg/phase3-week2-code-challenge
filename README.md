@@ -1,4 +1,4 @@
-# Phase 3 - Week 2, Python Challenge
+# Phase 3 - Week 2, Python Code Challenge
 
 # Object Relations Code Challenge - Restaurants
 
