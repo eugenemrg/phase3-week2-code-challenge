@@ -11,3 +11,11 @@ class Review:
     
     def all():
         pass
+    
+    @property
+    def customer(self):
+        return self._customer
+    
+    @property
+    def restaurant(self):
+        return self._restaurant
