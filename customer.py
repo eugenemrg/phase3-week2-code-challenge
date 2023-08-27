@@ -17,7 +17,7 @@ class Customer:
     
     @property
     def family_name(self):
-        return self.last_name
+        return self._family_name
     
     @family_name.setter
     def set_family_name(self, family_name):
