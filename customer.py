@@ -1,3 +1,5 @@
+from review import Review
+
 class Customer:
     
     customers = []
@@ -7,6 +9,7 @@ class Customer:
         self._given_name = first_name
         self._family_name = last_name
         self.customers.append(self)
+        self.reviews = []
     
     @property
     def given_name(self):
@@ -41,24 +44,26 @@ class Customer:
     
     def restaurants(self):
         # Returns a **unique** list of all restaurants a customer has reviewed
-        pass
+        return list({review.restaurant for review in self.reviews})
     
     def add_review(self, restaurant, rating):
         #  given a **restaurant object** and a star rating (as an integer), creates a new review and associates it with that customer and restaurant.
-        pass
+        self.reviews.append(Review(self, restaurant=restaurant, rating=rating))
     
     # aggregate and association
     
     def num_reviews(self):
         # Returns the total number of reviews that a customer has authored
-        pass
+        return len(self.reviews)
     
     @classmethod
-    def find_by_name(cls):
+    def find_by_name(cls, name):
         # given a string of a **full name**, returns the **first customer** whose full name matches
-        pass
+        for customer in cls.customers:
+            if customer.full_name == name:
+                return customer
     
     @classmethod
-    def find_all_by_given_name(cls):
+    def find_all_by_given_name(cls, name):
         # given a string of a given name, returns an **list** containing all customers with that given name
-        pass
+        return [customer.given_name for customer in cls.customers if customer.given_name == name]

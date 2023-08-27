@@ -1,10 +1,13 @@
 class Review:
     
+    reviews = []
+    
     def __init__(self, customer, restaurant, rating):
         # - Reviews should be initialized with a customer, restaurant, and a rating (a number)
         self._customer = customer
         self._restaurant = restaurant
         self._rating = rating
+        self.reviews.append(self)
     
     @property
     def rating(self):
@@ -14,7 +17,7 @@ class Review:
     @classmethod
     def all(cls):
         # returns all of the reviews
-        pass
+        return cls.reviews
     
     # object relationship
     
