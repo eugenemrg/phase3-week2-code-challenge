@@ -24,6 +24,17 @@ Topics covered:
 - Object Relationships
 - lists and list Methods
 
+# Setup Requirements
+
+- Visual Studio Code, see [here](https://code.visualstudio.com/)
+- Any [supported](https://www.python.org/downloads/) OS / environments / Windows Subsystem for Linux (WSL), details [here](https://learn.microsoft.com/en-us/windows/python/web-frameworks)
+- Git and Github
+- Python (Recommend version 3.10+), get the latest [here](https://www.python.org/downloads/)
+
+# Installation
+
+- Clone/Download the code from the repository and run it on any terminal with python enabled
+
 # Language(s)
 - Python
 
