@@ -1,8 +1,9 @@
+from review import Review
+
 class Restaurant:
     def __init__(self, name):
         # Restaurants should be initialized with a name, as a string
         self._name = name
-        self.reviews = []
     
     @property
     def name(self):
@@ -14,11 +15,11 @@ class Restaurant:
     
     def reviews(self):
         # returns a list of all reviews for that restaurant
-        return self.reviews
+        return [review for review in Review.reviews if review.restaurant.name == self._name]
     
     def customers(self):
         # - Returns a **unique** list of all customers who have reviewed a particular restaurant
-        return list({review.customer for review in self.reviews})
+        return list({review.customer for review in Review.reviews if review.restaurant.name == self._name})
     
     # Aggregate and Association Methods
     
@@ -26,6 +27,6 @@ class Restaurant:
         # returns the average star rating for a restaurant based on its reviews
         # Reminder: you can calculate the average by adding up all the ratings and dividing by the number of ratings
         rating_sum = 0
-        for review in self.reviews:
-            rating_sum += review.rating()
-        return (rating_sum / len(self.reviews))
+        for review in Review.reviews:
+            rating_sum += review.rating
+        return (rating_sum / len(Review.reviews))
