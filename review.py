@@ -7,7 +7,7 @@ class Review:
         self._customer = customer
         self._restaurant = restaurant
         self._rating = rating
-        self.reviews.append(self)
+        Review.reviews.append(self)
     
     @property
     def rating(self):

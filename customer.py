@@ -8,7 +8,7 @@ class Customer:
         # Customer should be initialized with a given name and family name, both strings (i.e., first and last name, like George Washington)"
         self._given_name = first_name
         self._family_name = last_name
-        self.customers.append(self)
+        Customer.customers.append(self)
         self.reviews = []
     
     @property
