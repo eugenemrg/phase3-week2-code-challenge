@@ -13,12 +13,13 @@ class Customer:
     
     @property
     def given_name(self):
+        print('test')
         # returns the customer's given name
         # should be able to change after the customer is created
         return self._given_name
     
     @given_name.setter
-    def set_given_name(self, given_name):
+    def given_name(self, given_name):
         self._given_name = given_name
     
     @property
@@ -28,7 +29,7 @@ class Customer:
         return self._family_name
     
     @family_name.setter
-    def set_family_name(self, family_name):
+    def family_name(self, family_name):
         self._family_name = family_name
     
     def full_name(self):
