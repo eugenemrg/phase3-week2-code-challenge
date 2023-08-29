@@ -28,5 +28,6 @@ class Restaurant:
         # Reminder: you can calculate the average by adding up all the ratings and dividing by the number of ratings
         rating_sum = 0
         for review in Review.reviews:
-            rating_sum += review.rating
+            if review.restaurant.name == self._name:
+                rating_sum += review.rating
         return (rating_sum / len(Review.reviews))
